@@ -1,5 +1,5 @@
 var router = require('express').Router();
 
-router.use('/api', require('./api'));
+router.use('/characters', require('./characters'));
 
 module.exports = router;
