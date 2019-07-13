@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.pagination_item {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  color: #202020;
+  display: block;
+  line-height: 1.25;
+  margin-left: -1px;
+  padding: 0.5rem 0.75rem;
+}
+.pagination_item.active {
+  background-color: #202020;
+  border-color: #202020;
+  color: #fff;
+}
+.pagination_item button {
+  cursor: pointer;
+}
