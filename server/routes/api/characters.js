@@ -3,26 +3,26 @@ const axios = require('axios');
 const crypto = require('crypto');
 
 const {
-  urlBaseCharacter,
-  apikey,
-  privateApiKey,
+  BASE_URL_CHARACTER,
+  API_KEY,
+  API_KEY_PRIVATE
 } = require('../../constants.js');
 const ts = Date.now();
 const hash = crypto
   .createHash('md5')
-  .update(ts + privateApiKey + apikey)
+  .update(ts + API_KEY_PRIVATE + API_KEY)
   .digest('hex');
 
 router.get('/', async (req, res, next) => {
   try {
-    const response = await axios.get(urlBaseCharacter, {
+    const response = await axios.get(BASE_URL_CHARACTER, {
       params: {
-        apikey,
+        apikey: API_KEY,
         hash,
         limit: req.query.limit,
         offset: req.query.offset,
-        ts,
-      },
+        ts
+      }
     });
 
     if (response.data.code === 200) {
